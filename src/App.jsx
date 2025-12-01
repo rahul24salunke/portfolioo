@@ -1,0 +1,21 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import { Button } from './components/ui/button'
+import Navbar from './component/Navbar/Navbar'
+import Home from './component/Body/Home'
+
+
+function App() {
+  return (
+    <>
+     <div className=' flex flex-col bg-[#121212] items-center min-h-screen'>
+      <Navbar />
+      <Home />
+     </div>
+    </>
+  )
+}
+
+export default App
