@@ -3,7 +3,7 @@ import React from 'react'
 const Starts = () => {
     return (
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-            {Array.from({ length: 150 }).map((_, i) => {
+            {Array.from({ length: 250 }).map((_, i) => {
                 const left = Math.random() * 100;
                 const top = Math.random() * 100;
                 const size = Math.random() * 5 + 1;

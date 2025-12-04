@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 const Navbar = () => {
     const [active, setActive] = useState('About')
-    const menu = ['About', 'Education', 'Projects','Skills','Contact'];
+    const menu = ['About', 'Education', 'Projects','Skills'];
 
     return (
         <div className='mt-4 rounded-full w-auto max-w-[95vw] bg-[#38383898] gap-2 sm:gap-5 px-2 sm:px-3 py-2 mx-4 sm:mx-0 overflow-x-auto scrollbar-hide'>

@@ -57,7 +57,7 @@ export default function ProjectCard({ title, icon, description, tags, githubLink
                         (tag) => (
                             <span
                                 key={tag}
-                                className="px-2 sm:px-3 py-0.5 sm:py-1 text-xs sm:text-sm rounded-full bg-cyan-500/10 font-mono
+                                className="px-2 sm:px-3 py-0.5 sm:py-1 text-xs sm:text-sm rounded-full bg-black font-mono
                            text-white border border-cyan-500/20"
                             >
                                 {tag}
@@ -67,13 +67,13 @@ export default function ProjectCard({ title, icon, description, tags, githubLink
                 </div>
 
                 {/* BUTTONS */}
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-2">
+                <div className="flex flex-col  sm:flex-row gap-2 sm:gap-4 pt-2">
                     <a
                         href={liveLink}
                         className="
               flex items-center justify-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 
               rounded-xl border border-cyan-500/30 font-mono
-              text-white hover:bg-cyan-500/10 transition-all text-sm sm:text-base
+              text-white bg-[#1b1b1b] hover:text-[#52B3C7] hover:scale-110 hover:shadow-[0_0_12px_rgba(10,102,194,0.5)] transition-all duration-300 transition-all text-sm sm:text-base
             "
                     >
                         <ExternalLink size={14} className="sm:w-4 sm:h-4" />
@@ -85,7 +85,7 @@ export default function ProjectCard({ title, icon, description, tags, githubLink
                         className="
               flex items-center justify-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2
               rounded-xl border border-cyan-500/30 
-              text-white hover:bg-cyan-500/10 transition-all font-mono text-sm sm:text-base">
+              text-white bg-[#1b1b1b] hover:text-[#52B3C7] hover:scale-110 hover:shadow-[0_0_12px_rgba(10,102,194,0.5)] transition-all duration-300 transition-all font-mono text-sm sm:text-base">
                         <Github size={14} className="sm:w-4 sm:h-4" />
                         Source
                     </a>

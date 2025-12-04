@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Github, Linkedin, Instagram, Globe, Terminal } from "lucide-react";
+import { Mail, MapPin, Phone, Github, Linkedin, Instagram, Globe, Terminal, X } from "lucide-react";
 import Starts from "./Starts";
 
 export default function Footer() {
@@ -44,17 +44,17 @@ export default function Footer() {
                     <h2 className="text-xl font-semibold text-white mb-4 font-mono">Follow Me</h2>
 
                     <div className="flex gap-5 text-gray-300">
-                        <a href="#" className="hover:text-cyan-400 transition">
+                        <a href="https://www.linkedin.com/in/rahulsalunke24/" className="hover:text-cyan-400 transition">
                             <Linkedin className="w-6 h-6" />
                         </a>
-                        <a href="#" className="hover:text-cyan-400 transition">
+                        <a href="https://github.com/rahul24salunke" className="hover:text-cyan-400 transition">
                             <Github className="w-6 h-6" />
                         </a>
-                        <a href="#" className="hover:text-cyan-400 transition">
+                        <a href="https://www.instagram.com/rahul_24salunke" className="hover:text-cyan-400 transition">
                             <Instagram className="w-6 h-6" />
                         </a>
-                        <a href="#" className="hover:text-cyan-400 transition">
-                            <Globe className="w-6 h-6" />
+                        <a href="https://x.com/rahul2salunke" className="hover:text-cyan-400 transition">
+                            <X className="w-6 h-6" />
                         </a>
                     </div>
                 </div>
