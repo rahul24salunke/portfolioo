@@ -3,6 +3,7 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ExternalLink, Github } from "lucide-react";
 import { Bot, Ear, BriefcaseBusiness } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const iconsMap = {
     Bot,
@@ -13,19 +14,22 @@ const iconsMap = {
 export default function ProjectCard({ title, icon, description, tags, githubLink, liveLink }) {
     const Icon = iconsMap[icon];
     return (
-        <Card
-            className="
-        bg-[#38383878]
-        backdrop-blur-xl 
-        border border-cyan-500/20 
-        rounded-2xl 
-        transition-all duration-300 
-        hover:-translate-y-1
-        w-full max-w-2xl
-        p-4 sm:p-6
-        flex flex-col
-      "
+        <motion.div
+            whileHover={{ y: -8, scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
+            <Card
+                className="
+            bg-[#38383878]
+            backdrop-blur-xl 
+            border border-cyan-500/20 
+            rounded-2xl 
+            transition-all duration-300 
+            w-full max-w-2xl
+            p-4 sm:p-6
+            flex flex-col
+          "
+            >
 
             {/* HEADER */}
             <CardHeader className="">
@@ -92,5 +96,6 @@ export default function ProjectCard({ title, icon, description, tags, githubLink
                 </div>
             </CardContent>
         </Card>
+        </motion.div>
     );
 }

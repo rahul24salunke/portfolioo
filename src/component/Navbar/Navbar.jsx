@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
     const [active, setActive] = useState('About')
@@ -65,22 +66,33 @@ const Navbar = () => {
     }, [menu]);
 
     return (
-        <div className='mt-4 rounded-full w-auto max-w-[95vw] bg-[#38383898] gap-2 sm:gap-5 px-2 sm:px-3 py-2 mx-4 sm:mx-0 overflow-x-auto scrollbar-hide'>
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className='mt-4 rounded-full w-auto max-w-[95vw] bg-[#38383898] gap-2 sm:gap-5 px-2 sm:px-3 py-2 mx-4 sm:mx-0 overflow-x-auto scrollbar-hide'
+        >
             <div className='flex gap-2 sm:gap-5 text-sm sm:text-base lg:text-l font-mono whitespace-nowrap'>
                 {
-                    menu.map((item) => (
-                        <div 
-                            key={item} 
+                    menu.map((item, index) => (
+                        <motion.div
+                            key={item}
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
                             onClick={() => scrollToSection(item)}
                             className={`relative px-2 sm:px-4 py-1.5 sm:py-2 rounded-full cursor-pointer transition-all duration-300 ${active === item
                                     ? "bg-white/10 text-white shadow-[0_0_5px_rgba(255,255,255,0.3)]"
-                                    : "text-gray-300 hover:text-white"}`}>
+                                    : "text-gray-300 hover:text-white"}`}
+                        >
                             {item}
-                        </div>
+                        </motion.div>
                     ))
                 }
             </div>
-        </div>
+        </motion.div>
     )
 }
 

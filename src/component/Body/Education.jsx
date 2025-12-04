@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import React from 'react'
 import { FaGraduationCap } from "react-icons/fa";
+import { motion } from 'framer-motion';
 const timelineData = [
     {
         id: 1,
@@ -27,19 +28,35 @@ const timelineData = [
         Result: '89.2%'
     },
 ];
-const TimelineItem = ({ item, isLast }) => {
+const TimelineItem = ({ item, isLast, index }) => {
     return (
-        <div className={`relative ${!isLast ? 'pb-6 sm:pb-8' : ''}`}>
+        <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            className={`relative ${!isLast ? 'pb-6 sm:pb-8' : ''}`}
+        >
             {/* Vertical Line Connector (Hidden on the last item) */}
             {!isLast && (
-                <div
-                    className="absolute top-0 left-1 sm:left-2 w-0.5 bg-gray-600 h-full"
+                <motion.div
+                    initial={{ scaleY: 0 }}
+                    whileInView={{ scaleY: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: index * 0.2 + 0.3 }}
+                    className="absolute top-0 left-1 sm:left-2 w-0.5 bg-gray-600 h-full origin-top"
                     aria-hidden="true"
                 />
             )}
 
             {/* Timeline Dot/Point */}
-            <div className="absolute left-0.5 sm:left-1 top-1.5 h-2 w-2 rounded-full bg-[#52B3C7] ring-2 sm:ring-3 ring-gray-900 z-10" />
+            <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", delay: index * 0.2 + 0.2, stiffness: 200 }}
+                className="absolute left-0.5 sm:left-1 top-1.5 h-2 w-2 rounded-full bg-[#52B3C7] ring-2 sm:ring-3 ring-gray-900 z-10"
+            />
 
             {/* Content Block */}
             <div className="ml-6 sm:ml-8 pl-1 pb-4">
@@ -64,18 +81,30 @@ const TimelineItem = ({ item, isLast }) => {
                     {item.description}
                 </p>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
 const Education = () => {
     return (
-        <div className="w-full max-w-5xl mt-6 lg:mt-10 rounded-xl flex flex-col items-center bg-[#38383878] border-1 border-gray-700 backdrop-blur-xl p-4 sm:p-6 lg:p-8 text-white mb-10 mx-4 lg:mx-0">
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="w-full max-w-5xl mt-6 lg:mt-10 rounded-xl flex flex-col items-center bg-[#38383878] border-1 border-gray-700 backdrop-blur-xl p-4 sm:p-6 lg:p-8 text-white mb-10 mx-4 lg:mx-0"
+        >
             <div className="w-full max-w-5xl pt-4 sm:pt-6 lg:pt-8">
 
                 {/* Section Header with Icon */}
                 {/* The icon is aligned to the left using negative margin to sit on the same vertical axis as the timeline dots. */}
-                <div className="mb-6 sm:mb-8 flex items-center pl-2 sm:pl-4">
+                <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-6 sm:mb-8 flex items-center pl-2 sm:pl-4"
+                >
 
                     {/* Icon (Stylized Cube - aligned to the timeline axis) */}
                     <div className="text-[#52B3C7] flex-shrink-0 -ml-1 sm:-ml-2 mr-2 sm:mr-3">
@@ -88,9 +117,15 @@ const Education = () => {
                         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-mono text-white tracking-tight">
                             Education
                         </h1>
-                        <div className="h-0.5 w-8 sm:w-12 bg-[#52B3C7] mt-2 rounded-full" />
+                        <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: "3rem" }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="h-0.5 sm:w-12 bg-[#52B3C7] mt-2 rounded-full"
+                        />
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Timeline Container */}
                 <div className="relative pl-2 sm:pl-4">
@@ -99,12 +134,13 @@ const Education = () => {
                             key={item.id}
                             item={item}
                             isLast={index === timelineData.length - 1}
+                            index={index}
                         />
                     ))}
                 </div>
 
             </div>
-        </div>
+        </motion.div>
     )
 }
 

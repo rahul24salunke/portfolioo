@@ -14,6 +14,7 @@ import {
 
 import SkillCard from "../SkillCard";
 import { FaDocker } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const SKILL_DATA = [
     {
@@ -54,11 +55,34 @@ const SKILL_DATA = [
 ];
 
 const SkillsSection = () => {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.2
+            }
+        }
+    };
+
     return (
-        <div className="w-full max-w-5xl mx-auto mb-10 bg-[#38383878] backdrop-blur-xl border-1 border-gray-700 rounded-2xl p-4 sm:p-6 lg:p-10 mx-4 lg:mx-auto">
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={containerVariants}
+            className="w-full max-w-5xl mx-auto mb-10 bg-[#38383878] backdrop-blur-xl border-1 border-gray-700 rounded-2xl p-4 sm:p-6 lg:p-10 mx-4 lg:mx-auto"
+        >
 
             {/* SECTION HEADER */}
-            <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8 lg:mb-10">
+            <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8 lg:mb-10"
+            >
                 <div className="p-2 sm:p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 shadow-[0_0_20px_rgba(0,255,255,0.15)]">
                     <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />
                 </div>
@@ -66,23 +90,44 @@ const SkillsSection = () => {
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-mono text-white tracking-tight">
                         Skills Stack
                     </h2>
-                    <div className="h-0.5 w-8 sm:w-12 bg-[#52B3C7] mt-2 rounded-full" />
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "3rem" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="h-0.5 sm:w-12 bg-[#52B3C7] mt-2 rounded-full"
+                    />
 
                 </div>
-            </div>
+            </motion.div>
 
             {/* SKILL GRID */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {SKILL_DATA.map((category, index) => (
-                    <SkillCard
+                    <motion.div
                         key={index}
-                        title={category.title}
-                        icon={category.icon}
-                        skills={category.skills}
-                    />
+                        variants={{
+                            hidden: { opacity: 0, y: 50, scale: 0.9 },
+                            visible: {
+                                opacity: 1,
+                                y: 0,
+                                scale: 1,
+                                transition: {
+                                    duration: 0.5,
+                                    ease: "easeOut"
+                                }
+                            }
+                        }}
+                    >
+                        <SkillCard
+                            title={category.title}
+                            icon={category.icon}
+                            skills={category.skills}
+                        />
+                    </motion.div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 };
 
