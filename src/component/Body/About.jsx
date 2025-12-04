@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { FileText, Github, Instagram, Linkedin, Twitter, X } from 'lucide-react'
 import React from 'react'
 
-const Home = () => {
+const About = () => {
     return (
 
         <div className="w-full lg:flex-1 max-w-5xl mt-6 lg:mt-10 items-center justify-center rounded-xl flex flex-col border-1 border-gray-700 items-center bg-[#38383878] backdrop-blur-xl p-4 sm:p-6 lg:p-8 text-white mx-4 lg:mx-0">
@@ -89,7 +89,7 @@ const Home = () => {
     )
 }
 
-export default Home
+export default About;
 {/* <div className='max-w-5xl max-h-full mt-5 rounded-xl flex flex-col items-center bg-[#38383878] p-5 text-white '>
             <div className="flex justify-center items-center mb-5">
                 <img

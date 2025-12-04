@@ -1,19 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import './index.css'
-import { Button } from './components/ui/button'
 import Navbar from './component/Navbar/Navbar'
-import Home from './component/Body/Home'
 import Education from './component/Body/Education'
-import ProfileCard from './component/Body/ProfileCard'
 import Starts from './component/Starts'
-import ProjectCard from './component/Body/ProfileCard'
 import Projects from './component/Body/Projects'
 import SkillsSection from './component/Body/Skills'
-import Contact from './component/Body/Contact'
 import Footer from './component/Footer'
+import About from './component/Body/About'
 
 
 function App() {
@@ -24,7 +18,7 @@ function App() {
           <Starts />
           {/*  */}
           <Navbar />
-           <Home />
+           <About />
           <Education />
           <Projects />
           <SkillsSection/>
