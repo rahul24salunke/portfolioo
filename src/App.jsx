@@ -13,6 +13,7 @@ import ProjectCard from './component/Body/ProfileCard'
 import Projects from './component/Body/Projects'
 import SkillsSection from './component/Body/Skills'
 import Contact from './component/Body/Contact'
+import Footer from './component/Footer'
 
 
 function App() {
@@ -23,13 +24,11 @@ function App() {
           <Starts />
           {/*  */}
           <Navbar />
-          <div className='flex flex-col lg:flex-row gap-4 lg:gap-2 w-full px-4 lg:px-0'>
-            <Contact />
-            <Home />
-          </div>
+           <Home />
           <Education />
           <Projects />
           <SkillsSection/>
+          <Footer />
       </div>
     </>
   )
