@@ -154,22 +154,3 @@ const About = () => {
 }
 
 export default About;
-{/* <div className='max-w-5xl max-h-full mt-5 rounded-xl flex flex-col items-center bg-[#38383878] p-5 text-white '>
-            <div className="flex justify-center items-center mb-5">
-                <img
-                    src="/icon.jpg"
-                    alt=""
-                    className="rounded-full h-32 w-32 object-cover"
-                />
-            </div>
-            <div className="text-justify overflow-y-scroll scrollbar-hide h-[70vh] w-full px-3">
-                <h2>About me</h2>
-                <h3>I am rahul salunke</h3>
-                I’m a passionate software developer focused on building clean, user-centered, and impactful digital experiences.
-                I enjoy turning ideas into functional products—whether it’s a web app, mobile application, or automation tool.
-
-                I love learning new technologies, refining UI/UX, and solving real-world problems through code.
-                Right now, I’m exploring advanced React patterns, modern backend architecture, and AI integrations to build smarter applications.
-
-            </div>
-        </div> */}
