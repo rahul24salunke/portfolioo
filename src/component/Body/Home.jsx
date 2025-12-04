@@ -5,86 +5,86 @@ import React from 'react'
 const Home = () => {
     return (
 
-        <div className="max-w-5xl mt-10 rounded-xl flex flex-col items-center bg-[#38383878] backdrop-blur-xl p-8 text-white">
+        <div className="w-full lg:flex-1 max-w-5xl mt-6 lg:mt-10 items-center justify-center rounded-xl flex flex-col border-1 border-gray-700 items-center bg-[#38383878] backdrop-blur-xl p-4 sm:p-6 lg:p-8 text-white mx-4 lg:mx-0">
             {/* Profile Image */}
-            <div className="relative mb-6">
+                <div className="relative mb-4 sm:mb-6">
                 <img
                     src="/icon.jpg"
                     alt="profile"
-                    className="w-36 h-36 rounded-full object-cover border-4 border-white/20 shadow-xl"
+                    className="w-24 h-24 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-full object-cover border-4 border-white/20 shadow-xl"
                 />
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl md:text-5xl font-bold tracking-wide text-center font-mono">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-center font-mono px-2">
                 Hi, I'm <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Rahul Salunke</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-6 text-lg text-gray-200 max-w-2xl text-center leading-relaxed font-mono">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-200 max-w-3xl text-center leading-relaxed font-mono px-2">
                 Full-Stack Developer who enjoys crafting beautiful UIs,
                 building scalable backend systems,
                 and creating meaningful digital experiences.
                 Whether it's designing a smooth frontend, architecting an API, or solving a complex problem,
-                I’m already diving into the solution with curiosity—and a cup of coffee.
+                I'm already diving into the solution with curiosity—and a cup of coffee.
             </p>
             {/* Social Buttons */}
-            <div className="flex gap-3 mt-4">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-4 px-2">
                 {/* LinkedIn */}
-                <Button className="rounded-2xl px-4 py-2 bg-[#1b1b1b] transition-all duration-300">
+                <Button className="rounded-2xl px-3 sm:px-4 py-1.5 sm:py-2 bg-[#1b1b1b] transition-all duration-300">
                     <a
                         href="https://www.linkedin.com/in/rahulsalunke24/"
                         target='_blank'
-                        className="flex items-center gap-2 text-white hover:text-[#52B3C7] hover:scale-110 hover:shadow-[0_0_12px_rgba(10,102,194,0.5)] transition-all duration-300"
+                        className="flex items-center gap-1.5 sm:gap-2 text-white hover:text-[#52B3C7] hover:scale-110 hover:shadow-[0_0_12px_rgba(10,102,194,0.5)] transition-all duration-300"
                     >
-                        <Linkedin size={18} className="transition-all duration-300" />
-                        <span className="text-[15px] font-medium">LinkedIn</span>
+                        <Linkedin size={16} className="sm:w-[18px] sm:h-[18px] transition-all duration-300" />
+                        <span className="text-xs sm:text-sm lg:text-[15px] font-medium">LinkedIn</span>
                     </a>
                 </Button>
 
                 {/* GitHub */}
-                <Button className="rounded-2xl px-4 py-2 bg-[#1b1b1b] transition-all duration-300">
+                <Button className="rounded-2xl px-3 sm:px-4 py-1.5 sm:py-2 bg-[#1b1b1b] transition-all duration-300">
                     <a
                         href="https://github.com/rahul24salunke"
                         target='_blank'
-                        className="flex items-center gap-2 hover:text-[#52B3C7] hover:scale-110 hover:shadow-[0_0_12px_rgba(10,102,194,0.5)] transition-all duration-300"
+                        className="flex items-center gap-1.5 sm:gap-2 hover:text-[#52B3C7] hover:scale-110 hover:shadow-[0_0_12px_rgba(10,102,194,0.5)] transition-all duration-300"
                     >
-                        <Github size={18} className="transition-all duration-300" />
-                        <span className="text-[15px] font-medium">GitHub</span>
+                        <Github size={16} className="sm:w-[18px] sm:h-[18px] transition-all duration-300" />
+                        <span className="text-xs sm:text-sm lg:text-[15px] font-medium">GitHub</span>
                     </a>
                 </Button>
 
                 {/* Twitter / X */}
-                <Button className="rounded-2xl px-4 py-2 bg-[#1b1b1b] transition-all duration-300">
+                <Button className="rounded-2xl px-3 sm:px-4 py-1.5 sm:py-2 bg-[#1b1b1b] transition-all duration-300">
                     <a
                         href="https://x.com/rahul2salunke"
                         target='_blank'
-                        className="flex items-center gap-2 hover:text-[#52B3C7] hover:scale-110 hover:shadow-[0_0_12px_rgba(10,102,194,0.5)] transition-all duration-300"
+                        className="flex items-center gap-1.5 sm:gap-2 hover:text-[#52B3C7] hover:scale-110 hover:shadow-[0_0_12px_rgba(10,102,194,0.5)] transition-all duration-300"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 640 640"
-                            className="w-[18px] h-[18px] transition-all duration-300"
+                            className="w-4 h-4 sm:w-[18px] sm:h-[18px] transition-all duration-300"
                             fill="currentColor"
                         >
                             <path d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z" />
                         </svg>
-                        <span className="text-[15px] font-medium">Twitter</span>
+                        <span className="text-xs sm:text-sm lg:text-[15px] font-medium">Twitter</span>
                     </a>
                 </Button>
 
                 {/* Resume */}
-                <Button className="rounded-2xl px-4 py-2 bg-[#1b1b1b] transition-all duration-300">
+                <Button className="rounded-2xl px-3 sm:px-4 py-1.5 sm:py-2 bg-[#1b1b1b] transition-all duration-300">
                     <a href="/RahulSalunke.pdf"
                         target='_blank'
-                        className="flex items-center gap-2 hover:text-[#52B3C7] hover:scale-110 hover:shadow-[0_0_12px_rgba(10,102,194,0.5)] transition-all duration-300"
+                        className="flex items-center gap-1.5 sm:gap-2 hover:text-[#52B3C7] hover:scale-110 hover:shadow-[0_0_12px_rgba(10,102,194,0.5)] transition-all duration-300"
                     >
-                        <FileText size={18} className="transition-all duration-300" />
-                        <span className="text-[15px] font-medium">Resume</span>
+                        <FileText size={16} className="sm:w-[18px] sm:h-[18px] transition-all duration-300" />
+                        <span className="text-xs sm:text-sm lg:text-[15px] font-medium">Resume</span>
                     </a>
                 </Button>
             </div>
-        </div>
+            </div>
 
     )
 }
